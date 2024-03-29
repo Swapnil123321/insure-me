@@ -10,5 +10,11 @@ pipeline {
 		         git branch: 'main', url: 'https://github.com/Swapnil123321/insure-me.git'
 		      }
       	}
+      	stage('Create a Package using maven') {
+		      steps {
+		         echo 'This stage will create a package using maven'
+		         sh 'mvn package'
+		      }
+	    }
 	}
 }
