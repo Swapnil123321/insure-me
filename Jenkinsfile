@@ -40,5 +40,11 @@ pipeline {
 	        	sh 'docker push unknowndocker811/insurance-app:1.0'
 	        }
 	    }
+	    stage('Ansbile configuration and Deployment') {
+	      	steps {
+	        	ansiblePlaybook credentialsId: 'ansible-ssh', disableHostKeyChecking: true, installation: 'ansible', inventory: '/etc/ansible/hosts', playbook: 'plabook.yml', vaultTmpPath: ''
+	            }
+	        }
+	    }
 	}
 }
