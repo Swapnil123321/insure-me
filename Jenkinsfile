@@ -35,5 +35,10 @@ pipeline {
 		     	}
 			}
 		}
+		stage('Push the image to dockerhub') {
+	      	steps {
+	        	sh 'docker push unknowndocker811/insurance-app:1.0'
+	        }
+	    }
 	}
 }
