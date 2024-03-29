@@ -22,5 +22,11 @@ pipeline {
           			reportName: 'HTML Report', reportTitles: '', useWrapperFileDirectly: true])
               }
         }
+        stage('Create a new Docker image') {
+	      	steps {
+	      		echo 'This stage will create a new docker image from the package Insure-Me.jar file'
+	        	sh 'docker build -t unknowndocker811/insurance-app:1.0 .'
+	      	}
+	    }
 	}
 }
